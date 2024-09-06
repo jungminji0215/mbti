@@ -1,23 +1,22 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { register } from "../api/auth";
 import AuthForm from "../components/AuthForm";
+import { SING_IN } from "../utils/routes";
 
 const SignUp = () => {
-  const signUp = () => {
-    console.log("회원가입 기능 시작");
-    const userData = {
-      id: id,
-      password: password,
-      nickname: nickname,
-    };
+  const navigate = useNavigate();
 
+  const signUp = async (userData) => {
     try {
-      const response = register(userData);
-    } catch (error) {}
+      const response = await register(userData);
+      if (response.success) navigate(SING_IN);
+    } catch (error) {
+      alert(error.response.data.message);
+    }
   };
 
-  console.log(typeof signUp);
-
-  return <AuthForm onSubmit={signUp} mode={"signup"} />;
+  return <AuthForm onSubmit={signUp} />;
 };
 
 export default SignUp;

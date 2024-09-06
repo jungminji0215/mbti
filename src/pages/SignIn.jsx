@@ -1,9 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "../api/auth";
+
 import AuthForm from "../components/AuthForm";
+import { HOME } from "../utils/routes";
 
 const SignIn = () => {
-  const signIn = () => {
-    console.log("로그인 기능 시작");
+  const navigate = useNavigate();
+
+  const signIn = async (userData) => {
+    try {
+      const response = await login(userData);
+      if (response.success) navigate(HOME);
+    } catch (error) {
+      alert(error.response.data.message);
+    }
   };
 
   return <AuthForm mode={"signIn"} onSubmit={signIn} />;
