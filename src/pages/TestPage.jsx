@@ -1,7 +1,8 @@
 import React from "react";
+import TestForm from "../components/TestForm";
 
 const TestPage = () => {
-  return <div>TestPage</div>;
+  return <TestForm />;
 };
 
 export default TestPage;

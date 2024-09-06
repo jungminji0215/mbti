@@ -1,7 +1,8 @@
 import React from "react";
+import TestResultList from "../components/TestResultList";
 
 const TestResultPage = () => {
-  return <div>TestResultPage</div>;
+  return <TestResultList />;
 };
 
 export default TestResultPage;

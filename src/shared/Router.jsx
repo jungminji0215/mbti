@@ -47,17 +47,32 @@ const Router = () => {
     {
       path: PROFILE,
       element: <ProtectedRouts />,
-      children: [<Profile />],
+      children: [
+        {
+          path: "",
+          element: <Profile />,
+        },
+      ],
     },
     {
       path: TEST,
       element: <ProtectedRouts />,
-      children: [<TestPage />],
+      children: [
+        {
+          path: "",
+          element: <TestPage />,
+        },
+      ],
     },
     {
       path: TEST_RESULT,
       element: <ProtectedRouts />,
-      children: [<TestResultPage />],
+      children: [
+        {
+          path: "",
+          element: <TestResultPage />,
+        },
+      ],
     },
   ];
 

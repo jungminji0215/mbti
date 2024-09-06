@@ -10,8 +10,8 @@ const SignIn = () => {
 
   const signIn = async (userData) => {
     try {
-      const response = await login(userData);
-      if (response.success) navigate(HOME);
+      const { data } = await login(userData);
+      if (data.success) navigate(HOME);
     } catch (error) {
       alert(error.response.data.message);
     }
