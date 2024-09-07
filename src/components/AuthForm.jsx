@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SING_UP } from "../utils/routes";
 
-// 회원가입
-// 로그인
 const AuthForm = ({ onSubmit, mode }) => {
   const [userData, setUserData] = useState({
     id: "",

@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { PROFILE, TEST_RESULT, TEST, SING_IN, HOME } from "../../utils/routes";
+import useUserStore from "../../zustand/userStore";
 
 const Header = () => {
-  useEffect(() => {}, []);
-
-  const user = false;
+  const { user } = useUserStore();
 
   return (
     <header>
@@ -15,6 +14,7 @@ const Header = () => {
           <Link to={PROFILE}>프로필</Link>
           <Link to={TEST}>테스트</Link>
           <Link to={TEST_RESULT}>결과</Link>
+          <span>정민지님 안녕하세요</span>
           <button>로그아웃</button>
         </>
       ) : (
