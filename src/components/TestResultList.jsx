@@ -1,36 +1,35 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useEffect } from "react";
 import { getTestResults } from "../api/testResults";
 import TestResultItem from "./TestResultItem.jsx";
+import useUserStore from "../zustand/userStore";
 
-const TestResultList = () => {
-  const fetchTestResults = async () => {
-    const { data } = await getTestResults();
-    return data;
-  };
+const TestResultList = ({ testResults }) => {
+  const { user } = useUserStore();
 
-  // 리액트 쿼리가 자동으로 원하는 데이터의 종류를 queryKey 에 들어있는 이름으로 캐싱을한다.
-  const {
-    data: testResults,
-    isPending,
-    isError,
-  } = useQuery({
-    queryKey: ["testResults"],
-    queryFn: fetchTestResults,
-  });
+  //TODO 나의 테스트 결과 따로 빼기
+  // useEffect(() => {
+  //   if (user) {
+  //     const myTest = testResults.find((testResult) => {
+  //       return testResult.id === user.id;
+  //     });
+  //     console.log("myTest :>> ", myTest);
+  //   }
+  // }, []);
 
-  // TODO 로딩중이면 스피너
   return (
     <>
-      {isPending
-        ? "로딩중입니다!!!!!!!"
-        : isError
-        ? "에러"
-        : testResults.map((testResult) => {
-            return (
-              <TestResultItem key={testResult.id} testResult={testResult} />
-            );
-          })}
+      {/* <h2>나의 테스트 결과</h2>
+      <TestResultItem key={myTest.id} testResult={myTest} />; */}
+
+      <h2>모든 테스트 결과</h2>
+      {testResults
+        .filter((testResult) => {
+          return testResult.isOpen === "true";
+        })
+        .map((testResult) => {
+          return <TestResultItem key={testResult.id} testResult={testResult} />;
+        })}
     </>
   );
 };

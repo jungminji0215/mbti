@@ -14,12 +14,25 @@ export const login = async (userData) => {
 
 // 회원정보 조회
 export const getUserProfile = async (token) => {
-  return await axios.get(`${API_URL}/login`, {
+  console.log("getUserProfile token :>> ", token);
+  return await axios.get(`${API_URL}/user`, {
     headers: {
-      Authorization: token,
+      Authorization: `Bearer ${token}`,
     },
   });
 };
 
 // 프로필 수정
-export const updateProfile = async (formData) => {};
+export const updateProfile = async ({ nickname, token }) => {
+  console.log("nickname :>> ", nickname);
+  console.log("token :>> ", token);
+  return await axios.patch(
+    `${API_URL}/profile`,
+    { nickname: nickname },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+};

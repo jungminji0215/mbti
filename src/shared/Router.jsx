@@ -9,7 +9,7 @@ import SignUp from "../pages/SignUp.jsx";
 import Profile from "../pages/Profile.jsx";
 import TestPage from "../pages/TestPage.jsx";
 import TestResultPage from "../pages/TestResultPage.jsx";
-import ProtectedRouts from "../components/router/ProtectedRouts.jsx";
+import ProtectedRouts from "./ProtectedRouts.jsx";
 import {
   HOME,
   PROFILE,
