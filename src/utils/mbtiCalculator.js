@@ -1,3 +1,5 @@
+import { questions } from "../data/questions";
+
 const calculateMBTI = (answers) => {
   const scores = {
     E: 0,
@@ -29,3 +31,5 @@ const calculateMBTI = (answers) => {
 
   return result;
 };
+
+export default calculateMBTI;

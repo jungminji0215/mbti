@@ -14,7 +14,6 @@ export const login = async (userData) => {
 
 // 회원정보 조회
 export const getUserProfile = async (token) => {
-  console.log("getUserProfile token :>> ", token);
   return await axios.get(`${API_URL}/user`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -24,8 +23,6 @@ export const getUserProfile = async (token) => {
 
 // 프로필 수정
 export const updateProfile = async ({ nickname, token }) => {
-  console.log("nickname :>> ", nickname);
-  console.log("token :>> ", token);
   return await axios.patch(
     `${API_URL}/profile`,
     { nickname: nickname },

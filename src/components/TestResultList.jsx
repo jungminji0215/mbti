@@ -25,7 +25,7 @@ const TestResultList = ({ testResults }) => {
       <h2>모든 테스트 결과</h2>
       {testResults
         .filter((testResult) => {
-          return testResult.isOpen === "true";
+          return testResult.visibility === "true";
         })
         .map((testResult) => {
           return <TestResultItem key={testResult.id} testResult={testResult} />;

@@ -1,21 +1,43 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-// MEMO : useUserStore 는 애플리케이션이 로드될때 실행된다?? React 컴포넌트가 렌더링되기 전에 이미 메모리에 올라가 있다?
-const useUserStore = create((set) => {
-  return {
-    user: null,
-    setUser: (userData) =>
-      set(() => ({
-        user: userData,
-      })),
-    updateNickname: (newNickname) =>
-      set((state) => {
-        return {
-          ...state.user,
-          nickname: newNickname,
-        };
-      }),
-  };
-});
+const useUserStore = create(
+  persist(
+    (set) => {
+      // const isLogin = localStorage.getItem("accessToken");
+
+      return {
+        // isLogin: !!isLogin,
+        user: null,
+        token: null,
+        setToken: (user) =>
+          set(() => {
+            return {
+              token: user.accessToken,
+            };
+          }),
+        setUser: (userData) =>
+          set(() => {
+            return { user: userData };
+          }),
+        updateNickname: (newNickname) =>
+          set((state) => {
+            return {
+              user: {
+                ...state.user,
+                nickname: newNickname,
+              },
+            };
+          }),
+        // setIsLogin: () => {
+        //   set(() => {
+        //     return { isLogin: !isLogin };
+        //   });
+        // },
+      };
+    },
+    { name: "userInfo" }
+  )
+);
 
 export default useUserStore;
