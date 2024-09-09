@@ -7,7 +7,6 @@ import AuthForm from "../components/AuthForm";
 import { HOME } from "../utils/routes";
 import useAuthStore from "../zustand/useAuthStore";
 
-// 새로고침 : persist
 const SignIn = () => {
   const navigate = useNavigate();
   const { setUser, setToken } = useUserStore();

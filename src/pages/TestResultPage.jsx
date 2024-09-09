@@ -10,8 +10,6 @@ const TestResultPage = () => {
     return data;
   };
 
-  // 리액트 쿼리가 자동으로 원하는 데이터의 종류를
-  // queryKey 에 들어있는 이름으로 캐싱을한다.
   const {
     data: testResults,
     isPending,
@@ -21,7 +19,6 @@ const TestResultPage = () => {
     queryFn: fetchTestResults,
   });
 
-  // TODO 로딩중이면 스피너
   return (
     <>
       {isPending ? (
