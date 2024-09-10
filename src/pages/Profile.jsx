@@ -13,7 +13,7 @@ const Profile = () => {
   } = useGetProfile(user.accessToken);
 
   return (
-    <div>
+    <>
       {isPending ? (
         "로딩중입니다...."
       ) : isError ? (
@@ -21,7 +21,7 @@ const Profile = () => {
       ) : (
         <ProfileItem userInfo={userInfo.data} />
       )}
-    </div>
+    </>
   );
 };
 

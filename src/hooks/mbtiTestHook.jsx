@@ -7,7 +7,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createTestResult } from "../api/testResults";
 import { TEST_RESULT } from "../utils/routes";
 import { useNavigate } from "react-router-dom";
-import { QUERY_KEYS } from "../api/constants/queryKeys";
+import { QUERY_KEYS } from "../constants/queryKeys";
 
 /** 테스트 결과 조회 */
 export const useGetMbtiTest = () => {

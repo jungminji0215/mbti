@@ -17,16 +17,21 @@ const TestForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className=" flex justify-center items-center h-full">
-      <form onSubmit={handleSubmit}>
+    <div className=" flex flex-col justify-center items-center p-16	">
+      <h2 className="font-semibold text-3xl mb-10">MBTI 테스트</h2>
+      <form className="flex flex-col items-center" onSubmit={handleSubmit}>
         {questions.map((q, index) => {
           return (
-            <div className="mb-8" key={q.id}>
-              <p>{q.question}</p>
+            <div
+              className="mb-8 text-left w-full border-solid border-2 p-3 rounded-lg  border-rose-500"
+              key={q.id}
+            >
+              <p className="mb-4">{q.question}</p>
               {q.options.map((option, i) => {
                 return (
-                  <label key={i}>
+                  <label className="mr-4 " key={i}>
                     <input
+                      className="mr-1 "
                       type="radio"
                       name={`question-${index}`}
                       value={option}
@@ -40,7 +45,12 @@ const TestForm = ({ onSubmit }) => {
             </div>
           );
         })}
-        <button type="submit">제출하기</button>
+        <button
+          className="border-solid border-2 p-3 rounded-lg  border-rose-500 w-48 "
+          type="submit"
+        >
+          제출하기
+        </button>
       </form>
     </div>
   );

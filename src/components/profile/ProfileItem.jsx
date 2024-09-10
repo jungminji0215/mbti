@@ -30,23 +30,36 @@ const ProfileItem = ({ userInfo }) => {
   };
 
   return (
-    <div className="flex flex-col	 justify-center items-center h-full gap-10">
+    <div className="flex flex-col	 items-center h-full gap-10 mt-32">
       {isEditMode ? (
         <>
           <span>{userInfo.nickname}</span>
-          <form onSubmit={handleUpdateProfile}>
+          <form
+            className="flex flex-col	items-center gap-10"
+            onSubmit={handleUpdateProfile}
+          >
             <input
               ref={nicknameRef}
               onChange={(e) => setNicknameInput(e.target.value)}
               value={nicknameInput}
             />
-            <button type="submit">수정</button>
+            <button
+              className="border-solid border-2 p-3 rounded-lg  border-rose-500 w-48"
+              type="submit"
+            >
+              수정
+            </button>
           </form>
         </>
       ) : (
         <>
           <span>{userInfo.nickname}</span>
-          <button onClick={changeMode}>프로필 수정하기</button>
+          <button
+            className="border-solid border-2 p-3 rounded-lg  border-rose-500 w-48"
+            onClick={changeMode}
+          >
+            프로필 수정하기
+          </button>
         </>
       )}
     </div>

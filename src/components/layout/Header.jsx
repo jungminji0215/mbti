@@ -13,11 +13,16 @@ const Header = () => {
   return (
     <header>
       {/* 헤더 높이 56px */}
-      <div className="flex justify-between items-center	px-20	min-h-14 text-lg">
+      <div
+        className="
+      flex justify-between items-center	px-32	
+      min-h-14 text-lg bg-slate-200 text-red-600	font-semibold	
+      "
+      >
         <Link to={HOME}>홈</Link>
         {user ? (
           <div className="flex gap-10">
-            <span>{user.nickname}</span>
+            <span className="text-black">{user.nickname}</span>
             <Link to={PROFILE}>프로필</Link>
             <Link to={TEST}>테스트</Link>
             <Link to={TEST_RESULT}>결과</Link>

@@ -32,7 +32,7 @@ const AuthForm = ({ onSubmit, mode }) => {
         onSubmit={handleSubmit}
       >
         <input
-          className="w-80 min-h-14 bg-sky-200	"
+          className="w-80 min-h-14 	ps-4   border-2 rounded-lg  border-rose-500"
           type={"text"}
           name="id"
           value={userData.id}
@@ -40,7 +40,7 @@ const AuthForm = ({ onSubmit, mode }) => {
           placeholder="아이디"
         />
         <input
-          className="w-80 min-h-14 bg-sky-200	"
+          className="w-80 min-h-14 	ps-4 border-2 rounded-lg  border-rose-500"
           type={"password"}
           name="password"
           value={userData.password}
@@ -50,7 +50,10 @@ const AuthForm = ({ onSubmit, mode }) => {
 
         {mode === "signIn" ? (
           <>
-            <button className="w-80 min-h-14 bg-sky-200	" type="submit">
+            <button
+              className="border-solid border-2 p-3 w-80 rounded-lg  border-rose-500"
+              type="submit"
+            >
               로그인
             </button>
             <Link to={SING_UP}>회원가입 하러가기</Link>
@@ -58,7 +61,7 @@ const AuthForm = ({ onSubmit, mode }) => {
         ) : (
           <>
             <input
-              className="w-80 min-h-14 bg-sky-200	"
+              className="w-80 min-h-14 	ps-4 border-2 rounded-lg  border-rose-500"
               type={"text"}
               name="nickname"
               value={userData.nickname}

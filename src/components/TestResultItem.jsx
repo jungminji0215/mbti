@@ -19,17 +19,29 @@ const TestResultItem = ({ testResult }) => {
   );
 
   return (
-    <div>
-      <span>{testResult.nickname}</span>
-      <span>{new Date(testResult.date).toLocaleString()}</span>
+    <div
+      className="mb-8 text-left  border-solid border-2 p-3 rounded-lg  border-rose-500
+    flex flex-col gap-5 w-2/5	"
+    >
+      <div className="flex justify-between">
+        <span>{testResult.nickname}</span>
+        <span>{new Date(testResult.date).toLocaleString()}</span>
+      </div>
+
       <span>{testResult.mbti}</span>
       <span>{mbtiDescriptions[testResult.mbti]}</span>
       {testResult.userId === user.id ? (
         <>
-          <button onClick={() => toggleVisibility.mutate()}>
+          <button
+            className="border-solid border-2 p-3 rounded-lg  border-rose-500"
+            onClick={() => toggleVisibility.mutate()}
+          >
             {testResult.visibility ? "비공개로 전환" : "공개로 전환"}
           </button>
-          <button onClick={() => deleteTestResult.mutate(testResult.id)}>
+          <button
+            className="border-solid border-2 p-3 rounded-lg  border-rose-500"
+            onClick={() => deleteTestResult.mutate(testResult.id)}
+          >
             삭제
           </button>
         </>
