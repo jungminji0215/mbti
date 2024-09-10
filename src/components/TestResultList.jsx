@@ -1,8 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
-import { getTestResults } from "../api/testResults";
-import TestResultItem from "./TestResultItem.jsx";
+import React from "react";
 import useUserStore from "../zustand/userStore";
+
+import TestResultItem from "./TestResultItem.jsx";
 
 const TestResultList = ({ testResults }) => {
   const { user } = useUserStore();

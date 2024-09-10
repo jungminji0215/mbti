@@ -4,10 +4,7 @@ import { persist } from "zustand/middleware";
 const useUserStore = create(
   persist(
     (set) => {
-      // const isLogin = localStorage.getItem("accessToken");
-
       return {
-        // isLogin: !!isLogin,
         user: null,
         token: null,
         setToken: (user) =>
@@ -29,11 +26,6 @@ const useUserStore = create(
               },
             };
           }),
-        // setIsLogin: () => {
-        //   set(() => {
-        //     return { isLogin: !isLogin };
-        //   });
-        // },
       };
     },
     { name: "userInfo" }

@@ -45,31 +45,19 @@ const Router = () => {
   // 페이지 접근 막아야함
   const routesForAuthenticatedOnly = [
     {
-      path: PROFILE,
+      path: "",
       element: <ProtectedRouts />,
       children: [
         {
-          path: "",
+          path: PROFILE,
           element: <Profile />,
         },
-      ],
-    },
-    {
-      path: TEST,
-      element: <ProtectedRouts />,
-      children: [
         {
-          path: "",
+          path: TEST,
           element: <TestPage />,
         },
-      ],
-    },
-    {
-      path: TEST_RESULT,
-      element: <ProtectedRouts />,
-      children: [
         {
-          path: "",
+          path: TEST_RESULT,
           element: <TestResultPage />,
         },
       ],
@@ -78,7 +66,6 @@ const Router = () => {
 
   const routes = [
     {
-      path: "/",
       element: <Layout />,
       children: [
         ...publicRoutes,

@@ -1,11 +1,14 @@
 import React from "react";
-import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
+
+import { useMutation } from "@tanstack/react-query";
+
 import useUserStore from "../zustand/userStore";
+import useAuthStore from "../zustand/useAuthStore";
+
 import { login } from "../api/auth";
 import AuthForm from "../components/AuthForm";
 import { HOME } from "../utils/routes";
-import useAuthStore from "../zustand/useAuthStore";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -16,6 +19,7 @@ const SignIn = () => {
     mutationFn: login,
     onSuccess: (data) => {
       setToken(data.data);
+
       setIsLogin(true);
       setUser(data.data);
 

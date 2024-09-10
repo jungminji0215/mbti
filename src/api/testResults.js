@@ -1,24 +1,19 @@
-import axios from "axios";
-
-const API_URL = "http://localhost:4000/testResults";
+import mbtiTestInstance from "../axiosinstance/mbtiTestInstance";
 
 export const getTestResults = async () => {
-  return await axios.get(API_URL);
+  return await mbtiTestInstance.get("/testResults");
 };
 
 export const createTestResult = async (resultData) => {
-  console.log("createTestResult resultData :>> ", resultData);
-  return await axios.post(`${API_URL}`, resultData);
+  return await mbtiTestInstance.post("/testResults", resultData);
 };
 
 export const deleteTestResult = async (id) => {
-  await axios.delete(`${API_URL}/${id}`);
+  await mbtiTestInstance.delete(`${"/testResults"}/${id}`);
 };
 
 export const updateTestResultVisibility = async (id, visibility) => {
-  console.log("id :>> ", id);
-  console.log("visibility :>> ", visibility);
-  return await axios.patch(`${API_URL}/${id}`, {
+  return await mbtiTestInstance.patch(`${"/testResults"}/${id}`, {
     visibility: visibility,
   });
 };

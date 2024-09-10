@@ -1,23 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { getTestResults } from "../api/testResults";
+
+/** 커스텀 훅 */
+import { useGetMbtiTest } from "../hooks/mbtiTestHook";
 
 import TestResultList from "../components/TestResultList";
 
 const TestResultPage = () => {
-  const fetchTestResults = async () => {
-    const { data } = await getTestResults();
-    return data;
-  };
-
-  const {
-    data: testResults,
-    isPending,
-    isError,
-  } = useQuery({
-    queryKey: ["testResults"],
-    queryFn: fetchTestResults,
-  });
+  const { data: testResults, isPending, isError } = useGetMbtiTest();
 
   return (
     <>

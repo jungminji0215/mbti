@@ -11,7 +11,7 @@ const Header = () => {
       <Link to={HOME}>홈</Link>
       {user ? (
         <>
-          <span>{user?.nickname}</span>
+          <span>{user.nickname}</span>
           <Link to={PROFILE}>프로필</Link>
           <Link to={TEST}>테스트</Link>
           <Link to={TEST_RESULT}>결과</Link>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 import { SING_UP } from "../utils/routes";
 
 const AuthForm = ({ onSubmit, mode }) => {
@@ -9,7 +10,7 @@ const AuthForm = ({ onSubmit, mode }) => {
     nickname: "",
   });
 
-  // 회원가입 & 로그인
+  /** 회원가입 & 로그인 */
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(userData);
