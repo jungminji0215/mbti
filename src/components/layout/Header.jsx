@@ -1,6 +1,6 @@
 /** react 라이브러리 */
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 /** 상태관리 */
 import useUserStore from "../../zustand/userStore";
@@ -21,7 +21,14 @@ const Header = () => {
             <Link to={PROFILE}>프로필</Link>
             <Link to={TEST}>테스트</Link>
             <Link to={TEST_RESULT}>결과</Link>
-            <button>로그아웃</button>
+            <button
+              onClick={() => {
+                localStorage.removeItem("userInfo");
+                window.location.href = HOME;
+              }}
+            >
+              로그아웃
+            </button>
           </div>
         ) : (
           <Link to={SING_IN}>로그인</Link>

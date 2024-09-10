@@ -7,11 +7,12 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createTestResult } from "../api/testResults";
 import { TEST_RESULT } from "../utils/routes";
 import { useNavigate } from "react-router-dom";
+import { QUERY_KEYS } from "../api/constants/queryKeys";
 
 /** 테스트 결과 조회 */
 export const useGetMbtiTest = () => {
   return useQuery({
-    queryKey: ["testResults"],
+    queryKey: [QUERY_KEYS.TEST_RESULTS],
     queryFn: getTestResults,
     select: (data) => data.data, // 응답에서 data만 선택
   });
@@ -39,7 +40,7 @@ export const useDeleteTestResult = () => {
   return useMutation({
     mutationFn: deleteTestResult,
     onSuccess: () => {
-      queryClient.invalidateQueries(["testResults"]);
+      queryClient.invalidateQueries([QUERY_KEYS.TEST_RESULTS]);
     },
     onError: (error) => {
       console.error("Delete failed:", error);
@@ -55,7 +56,7 @@ export const useToggleVisibility = (id, newVisibility) => {
   return useMutation({
     mutationFn: () => updateTestResultVisibility(id, newVisibility),
     onSuccess: () => {
-      queryClient.invalidateQueries(["testResults"]);
+      queryClient.invalidateQueries([QUERY_KEYS.TEST_RESULTS]);
     },
     onError: (error) => {
       alert(error.message);

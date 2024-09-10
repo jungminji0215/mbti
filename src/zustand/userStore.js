@@ -25,11 +25,11 @@ const useUserStore = create(
               },
             };
           }),
-        resetUser: () =>
-          set(() => ({
-            user: null,
-            isLogin: false,
-          })),
+        // resetUser: () =>
+        // set(() => ({
+        //   user: null,
+        //   isLogin: false,
+        // })),
       };
     },
     { name: "userInfo" }

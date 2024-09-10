@@ -19,6 +19,38 @@
     {
       "id": "3",
       "userId": "test_id",
+      "nickname": "김르탄",
+      "mbti": "INFJ",
+      "date": "2024-09-09T11:16:34.902Z",
+      "visibility": true
+    },
+    {
+      "id": "4",
+      "userId": "test_id",
+      "nickname": "김르탄",
+      "mbti": "INFJ",
+      "date": "2024-09-09T11:16:34.902Z",
+      "visibility": true
+    },
+    {
+      "id": "5",
+      "userId": "test_id",
+      "nickname": "김르탄",
+      "mbti": "INFJ",
+      "date": "2024-09-09T11:16:34.902Z",
+      "visibility": true
+    },
+    {
+      "id": "6",
+      "userId": "test_id",
+      "nickname": "김르탄",
+      "mbti": "INFJ",
+      "date": "2024-09-09T11:16:34.902Z",
+      "visibility": true
+    },
+    {
+      "id": "7",
+      "userId": "test_id",
       "nickname": "박르탄",
       "mbti": "INFJ",
       "date": "2024-09-09T11:16:34.902Z",
