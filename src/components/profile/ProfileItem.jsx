@@ -43,7 +43,7 @@ const ProfileItem = ({ userInfo, token }) => {
   /** 프로필 업데이트 */
 
   return (
-    <div>
+    <div className="flex flex-col	 justify-center items-center h-full gap-10">
       {isEditMode ? (
         <>
           <span>{userInfo.nickname}</span>

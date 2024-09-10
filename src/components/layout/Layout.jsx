@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className=" h-screen " style={{ height: "calc(100vh - 56px)" }}>
         <Outlet context={{ isLogin, setIsLogin }} />
       </main>
     </>

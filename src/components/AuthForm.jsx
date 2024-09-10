@@ -24,9 +24,13 @@ const AuthForm = ({ onSubmit, mode }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="flex justify-center items-center h-full">
+      <form
+        className="flex flex-col justify-center	items-center gap-5 "
+        onSubmit={handleSubmit}
+      >
         <input
+          className="w-80 min-h-14 bg-sky-200	"
           type={"text"}
           name="id"
           value={userData.id}
@@ -34,6 +38,7 @@ const AuthForm = ({ onSubmit, mode }) => {
           placeholder="아이디"
         />
         <input
+          className="w-80 min-h-14 bg-sky-200	"
           type={"password"}
           name="password"
           value={userData.password}
@@ -43,18 +48,22 @@ const AuthForm = ({ onSubmit, mode }) => {
 
         {mode === "signIn" ? (
           <>
-            <button type="submit">로그인</button>
+            <button className="w-80 min-h-14 bg-sky-200	" type="submit">
+              로그인
+            </button>
             <Link to={SING_UP}>회원가입 하러가기</Link>
           </>
         ) : (
           <>
             <input
+              className="w-80 min-h-14 bg-sky-200	"
               type={"text"}
               name="nickname"
               value={userData.nickname}
               onChange={handleChange}
               placeholder="닉네임"
             />
+
             <button type="submit">회원가입</button>
           </>
         )}

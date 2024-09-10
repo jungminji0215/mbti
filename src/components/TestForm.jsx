@@ -17,11 +17,11 @@ const TestForm = ({ onSubmit }) => {
   };
 
   return (
-    <div>
+    <div className=" flex justify-center items-center h-full">
       <form onSubmit={handleSubmit}>
         {questions.map((q, index) => {
           return (
-            <div key={q.id}>
+            <div className="mb-8" key={q.id}>
               <p>{q.question}</p>
               {q.options.map((option, i) => {
                 return (
