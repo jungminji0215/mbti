@@ -6,17 +6,16 @@ const useUserStore = create(
     (set) => {
       return {
         user: null,
-        // token: null,
-        // setToken: (user) =>
-        //   set(() => {
-        //     return {
-        //       token: user.accessToken,
-        //     };
-        //   }),
+        isLogin: false,
         setUser: (userData) =>
           set(() => {
             return { user: userData };
           }),
+        setIsLogin: (isLogIn) => {
+          set(() => {
+            return { isLogin: isLogIn };
+          });
+        },
         updateNickname: (newNickname) =>
           set((state) => {
             return {
@@ -26,6 +25,11 @@ const useUserStore = create(
               },
             };
           }),
+        resetUser: () =>
+          set(() => ({
+            user: null,
+            isLogin: false,
+          })),
       };
     },
     { name: "userInfo" }

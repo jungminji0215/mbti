@@ -5,8 +5,7 @@ import useUserStore from "../../zustand/userStore";
 
 const Home = () => {
   const { user } = useUserStore();
-
-  console.log("Home user:>> ", user);
+  console.log("Home user :>> ", user);
 
   return (
     <div className="flex flex-col	items-center">
