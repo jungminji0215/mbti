@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { SING_UP } from "../utils/routes";
 
+/** 회원가입&로그인 form */
 const AuthForm = ({ onSubmit, mode }) => {
   const [userData, setUserData] = useState({
     id: "",
@@ -16,6 +17,7 @@ const AuthForm = ({ onSubmit, mode }) => {
     onSubmit(userData);
   };
 
+  /** 유저 정보 세팅 */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData((prev) => {

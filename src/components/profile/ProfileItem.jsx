@@ -1,19 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { getUserProfile, updateProfile } from "../../api/auth.js";
 import useUserStore from "../../zustand/userStore.js";
+import { useUpdateProfile } from "../../hooks/userProfileHook.jsx";
 
-const ProfileItem = ({ userInfo, token }) => {
-  console.log("userInfo :>> ", userInfo);
-  const queryClient = useQueryClient();
+const ProfileItem = ({ userInfo }) => {
+  const { user } = useUserStore();
 
   const [isEditMode, setIsEditMode] = useState(false);
   const [nicknameInput, setNicknameInput] = useState(userInfo.nickname);
 
-  const { updateNickname } = useUserStore();
-
   /** 자동 포커스 */
   const nicknameRef = useRef("");
+
   useEffect(() => {
     if (isEditMode) nicknameRef.current.focus();
   }, [isEditMode]);
@@ -24,23 +21,13 @@ const ProfileItem = ({ userInfo, token }) => {
   };
 
   /** 프로필 업데이트 */
-  const { mutate } = useMutation({
-    mutationFn: updateProfile,
-    onSuccess: (data) => {
-      updateNickname(data.data.nickname);
-      queryClient.invalidateQueries(["userInfo"]);
-    },
-    onError: (error) => {
-      alert(error.response.data.message);
-    },
-  });
+  const { mutate } = useUpdateProfile();
 
   const handleUpdateProfile = (e) => {
     e.preventDefault();
-    mutate({ nickname: nicknameInput, token: token });
+    mutate({ nickname: nicknameInput, token: user.accessToken });
     setIsEditMode(false);
   };
-  /** 프로필 업데이트 */
 
   return (
     <div className="flex flex-col	 justify-center items-center h-full gap-10">

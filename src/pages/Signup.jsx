@@ -2,16 +2,21 @@
 import React from "react";
 
 /** 커스텀 훅 */
-import { useSignUp } from "../hooks/userHook";
+import { useSignUp } from "../hooks/userAuthHook";
 
 import AuthForm from "../components/AuthForm";
 
+/** 회원가입 */
 const SignUp = () => {
-  const { mutate } = useSignUp();
-
-  const signUp = (userData) => {
+  /**
+    const { mutate } = useSignUp();
+    
+    const signUp = (userData) => {
     mutate(userData);
   };
+   */
+
+  const { mutate: signUp } = useSignUp();
 
   return <AuthForm onSubmit={signUp} />;
 };

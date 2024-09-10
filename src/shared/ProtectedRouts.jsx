@@ -5,10 +5,12 @@ import { SING_IN } from "../utils/routes.js";
 import useAuthStore from "../zustand/useAuthStore.js";
 import useUserStore from "../zustand/userStore";
 
-const ProtectedRouts = ({ children }) => {
+const ProtectedRouts = () => {
+  console.log("----- ProtectedRouts 접근 -----");
+
   const navigate = useNavigate();
 
-  const { user, token, setUser } = useUserStore();
+  const { user, setUser } = useUserStore();
   const { isLogin, setIsLogin } = useAuthStore();
 
   // enable 옵션?
@@ -18,23 +20,23 @@ const ProtectedRouts = ({ children }) => {
    * 새로고침을 하면 이 로직이 작동하면서 토큰이 만료되면 로그인페이지로 이동
    */
 
-  useEffect(() => {
-    const getUser = async () => {
-      if (!isLogin) {
-        try {
-          const user = await getUserProfile(token);
+  // useEffect(() => {
+  //   const getUser = async () => {
+  //     if (!isLogin) {
+  //       try {
+  //         const user = await getUserProfile(token);
 
-          console.log("ProtectedRouts user :>> ", user);
-          setUser(user.data);
+  //         console.log("ProtectedRouts user :>> ", user);
+  //         setUser(user.data);
 
-          setIsLogin(true);
-        } catch (error) {
-          navigate(SING_IN);
-        }
-      }
-    };
-    getUser();
-  }, []);
+  //         setIsLogin(true);
+  //       } catch (error) {
+  //         navigate(SING_IN);
+  //       }
+  //     }
+  //   };
+  //   getUser();
+  // }, []);
 
   /** 로그인이 안된 상태이면 -> 로그인 페이지로 보내기 */
   if (!user) {

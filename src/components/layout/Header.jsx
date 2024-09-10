@@ -1,7 +1,11 @@
+/** react 라이브러리 */
 import React from "react";
 import { Link } from "react-router-dom";
-import { PROFILE, TEST_RESULT, TEST, SING_IN, HOME } from "../../utils/routes";
+
+/** 상태관리 */
 import useUserStore from "../../zustand/userStore";
+
+import { PROFILE, TEST_RESULT, TEST, SING_IN, HOME } from "../../utils/routes";
 
 const Header = () => {
   const { user } = useUserStore();

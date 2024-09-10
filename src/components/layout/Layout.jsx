@@ -3,13 +3,18 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 
 const Layout = () => {
-  const [isLogin, setIsLogin] = useState(false); // 로그인 해서 들어올때만 true
+  // 로그인 해서 들어올때만 true
+  // const [isLogin, setIsLogin] = useState(false);
+
+  console.log("----- Layout 접근 -----");
 
   return (
     <>
       <Header />
       <main className=" h-screen " style={{ height: "calc(100vh - 56px)" }}>
-        <Outlet context={{ isLogin, setIsLogin }} />
+        <Outlet
+        // context={{ isLogin, setIsLogin }}
+        />
       </main>
     </>
   );

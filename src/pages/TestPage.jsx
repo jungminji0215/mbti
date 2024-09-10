@@ -1,25 +1,13 @@
 import React from "react";
 import TestForm from "../components/TestForm";
-import { useNavigate } from "react-router-dom";
 import calculateMBTI from "../utils/mbtiCalculator";
-import { createTestResult } from "../api/testResults";
 import useUserStore from "../zustand/userStore";
-import { useMutation } from "@tanstack/react-query";
-import { TEST_RESULT } from "../utils/routes";
+import { useMbitTest } from "../hooks/mbtiTestHook";
 
 const TestPage = () => {
-  const navigate = useNavigate();
   const { user } = useUserStore();
 
-  const { mutate } = useMutation({
-    mutationFn: createTestResult,
-    onSuccess: () => {
-      navigate(TEST_RESULT);
-    },
-    onError: (error) => {
-      alert(error.message);
-    },
-  });
+  const { mutate } = useMbitTest();
 
   /** 테스트 제출 */
   const handleTestSubmit = async (answers) => {

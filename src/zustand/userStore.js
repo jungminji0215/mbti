@@ -6,13 +6,13 @@ const useUserStore = create(
     (set) => {
       return {
         user: null,
-        token: null,
-        setToken: (user) =>
-          set(() => {
-            return {
-              token: user.accessToken,
-            };
-          }),
+        // token: null,
+        // setToken: (user) =>
+        //   set(() => {
+        //     return {
+        //       token: user.accessToken,
+        //     };
+        //   }),
         setUser: (userData) =>
           set(() => {
             return { user: userData };
