@@ -11,6 +11,7 @@ export const register = async (userData) => {
 
 /** 로그인 */
 export const login = async (userData) => {
+  // return await authInstance.post("/login?expiresIn=5s", userData);
   return await authInstance.post("/login", userData);
 };
 

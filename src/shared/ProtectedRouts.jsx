@@ -6,7 +6,6 @@ import { getUserProfile } from "../api/auth";
 
 const ProtectedRouts = () => {
   const { user, isLogin, setIsLogin, setUser, pageType } = useUserStore();
-
   const navigate = useNavigate();
   const clearUserIdStorage = useUserStore.persist.clearStorage;
 
@@ -21,13 +20,11 @@ const ProtectedRouts = () => {
         try {
           await getUserProfile(user.accessToken);
         } catch (error) {
+          alert(error.response.data.message);
+
           setUser(null);
           setIsLogin(false);
-
-          // 저장된 persist 데이터 삭제
           clearUserIdStorage();
-
-          // alert(error.response.data.message);
           navigate(SING_IN);
         }
       }

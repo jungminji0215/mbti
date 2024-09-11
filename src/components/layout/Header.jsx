@@ -53,7 +53,9 @@ const Header = () => {
               onClick={() => {
                 setUser(null);
                 setIsLogin(false);
+                // setLogout(true);
                 clearUserIdStorage();
+                navigate(HOME);
               }}
             >
               로그아웃
