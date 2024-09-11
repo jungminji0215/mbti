@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const mbtiTestInstance = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://carpal-chestnut-blinker.glitch.me",
 });
 
 export default mbtiTestInstance;
