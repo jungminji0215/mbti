@@ -122,7 +122,7 @@ https://github.com/user-attachments/assets/397ad38d-0aa1-4be4-9067-8f96fd83abbc 
 
 ## 🔥 기록
 
-- [토큰 만료 이슈]()
+- [토큰 만료 이슈](https://jungminji0215.tistory.com/59)
 
 <br>
 
