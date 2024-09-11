@@ -20,4 +20,5 @@ const SignUp = () => {
 
   return <AuthForm onSubmit={signUp} />;
 };
+
 export default SignUp;
