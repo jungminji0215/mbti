@@ -18,7 +18,7 @@
 
 ![main](https://github.com/user-attachments/assets/e3f173c4-557c-49bf-89f2-187beec70346)
 
-🔗 배포링크 : [MBTI TEST]()
+🔗 배포링크 : [MBTI TEST](https://mbti-one.vercel.app/)
 
 <br>
 
