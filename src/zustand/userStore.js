@@ -7,6 +7,13 @@ const useUserStore = create(
       return {
         user: null,
         isLogin: false,
+        pageType: "",
+        setPageType: (type) => {
+          console.log("useUserStore type :>> ", type);
+          set(() => {
+            return { pageType: type };
+          });
+        },
         setUser: (userData) =>
           set(() => {
             return { user: userData };
@@ -25,11 +32,6 @@ const useUserStore = create(
               },
             };
           }),
-        // resetUser: () =>
-        // set(() => ({
-        //   user: null,
-        //   isLogin: false,
-        // })),
       };
     },
     { name: "userInfo" }

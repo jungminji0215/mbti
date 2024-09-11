@@ -6,8 +6,6 @@ const Layout = () => {
   // 로그인 해서 들어올때만 true
   // const [isLogin, setIsLogin] = useState(false);
 
-  console.log("----- Layout 접근 -----");
-
   return (
     <>
       <Header />

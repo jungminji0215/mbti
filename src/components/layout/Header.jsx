@@ -8,7 +8,9 @@ import useUserStore from "../../zustand/userStore";
 import { PROFILE, TEST_RESULT, TEST, SING_IN, HOME } from "../../utils/routes";
 
 const Header = () => {
-  const { user } = useUserStore();
+  const { user, setPageType, setUser, setIsLogin } = useUserStore();
+  const navigate = useNavigate();
+  const clearUserIdStorage = useUserStore.persist.clearStorage;
 
   return (
     <header>
@@ -23,13 +25,35 @@ const Header = () => {
         {user ? (
           <div className="flex gap-10">
             <span className="text-black">{user.nickname}</span>
-            <Link to={PROFILE}>프로필</Link>
-            <Link to={TEST}>테스트</Link>
-            <Link to={TEST_RESULT}>결과</Link>
             <button
               onClick={() => {
-                localStorage.removeItem("userInfo");
-                window.location.href = HOME;
+                setPageType("Profile");
+                navigate(PROFILE);
+              }}
+            >
+              프로필
+            </button>
+            <button
+              onClick={() => {
+                setPageType("Test");
+                navigate(TEST);
+              }}
+            >
+              테스트
+            </button>
+            <button
+              onClick={() => {
+                setPageType("TestResultPage");
+                navigate(TEST_RESULT);
+              }}
+            >
+              결과
+            </button>
+            <button
+              onClick={() => {
+                setUser(null);
+                setIsLogin(false);
+                clearUserIdStorage();
               }}
             >
               로그아웃

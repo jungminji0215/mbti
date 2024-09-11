@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 /** 커스텀 훅 */
 import { useGetMbtiTest } from "../hooks/mbtiTestHook";
 
 import TestResultList from "../components/TestResultList";
+import useUserStore from "../zustand/userStore";
 
 const TestResultPage = () => {
   const { data: testResults, isPending, isError } = useGetMbtiTest();

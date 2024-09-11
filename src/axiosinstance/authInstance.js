@@ -14,6 +14,8 @@ authInstance.interceptors.request.use((config) => {
 });
 */
 
+/**  
+ * MEMO : 토큰 오류 -> 처음 해결해본 방식
 authInstance.interceptors.response.use(
   (response) => {
     return response;
@@ -28,5 +30,6 @@ authInstance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+*/
 
 export default authInstance;
