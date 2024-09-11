@@ -16,6 +16,8 @@
 
 # MBTI 테스트
 
+![main](https://github.com/user-attachments/assets/e3f173c4-557c-49bf-89f2-187beec70346)
+
 🔗 배포링크 : [MBTI TEST]()
 
 <br>
@@ -66,27 +68,37 @@
 
 ### 👉🏻 기능
 
-1. 홈 페이지
+1. 메인
 
-![]()
+![main](https://github.com/user-attachments/assets/e3f173c4-557c-49bf-89f2-187beec70346)
 
-- 설명
-
-<br>
-
-2. 메인 페이지
-
-- 이미지
-
-- 설명
+- 메인페이지는 비로그인자도 접근 가능하며 내 성격 알아보러 가기 버튼을 클릭하여 테스트 진행 페이지로 이동할 수 있다.
 
 <br>
 
-3. 상세 페이지
+2. 로그인/회원가입
 
-- 이미지
+![signup](https://github.com/user-attachments/assets/6850e59d-d030-4e11-8914-02606662cebc)
 
-- 설명.
+![signin](https://github.com/user-attachments/assets/734dce2a-a130-4f33-af07-ed99f05f6a42)
+
+- 회원가입과 로그인을 할 수 있다.
+
+<br>
+
+3. 테스트 페이지
+
+![test](https://github.com/user-attachments/assets/b7bd0421-dc43-4d88-999d-7027abd36b64)
+
+- 각 질문에 대한 답변을 선택하고, 모두 선택했으면 제출할 수 있다.
+
+<br>
+
+4. 테스트 결과 페이지
+
+![test-result](https://github.com/user-attachments/assets/da642658-bb64-4074-ad4c-cec695782816)
+
+- 나와 다른 사람이 테스트한 결과를 한 눈에 볼 수 있다.
 
 <!-- ### 👉🏻 시연 영상
 
@@ -98,8 +110,12 @@ https://github.com/user-attachments/assets/397ad38d-0aa1-4be4-9067-8f96fd83abbc 
 
 ### 👉🏻 디렉토리 구조
 
-![dir]()
+<details>
+  <summary>디렉토리 구조 보기</summary>
 
+![dir](https://github.com/user-attachments/assets/0d970b56-c4bc-4984-8a70-448035039f55)
+
+</details>
 <!-- ### 👉🏻 컴포넌트 구조 -->
 
 <br>
